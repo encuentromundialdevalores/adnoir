@@ -13,8 +13,8 @@ export function Hero() {
           <span className="inline-block text-xs tracking-[0.4em] uppercase text-black/40 font-bold mb-10">
             Institutional Quality • Exclusive Access
           </span>
-          <h1 
-            className="text-7xl lg:text-[10rem] leading-none mb-14 text-black font-semibold tracking-tighter"
+          <h1
+            className="text-7xl lg:text-[10rem] leading-none mb-14 text-black font-semibold tracking-[0.2em]"
           >
             AD NOIR
           </h1>

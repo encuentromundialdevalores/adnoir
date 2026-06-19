@@ -43,9 +43,10 @@ const PROJECTS = [
     pdfUrl: "/docs/apotech-teaser.pdf",
     sliderImages: [
       "/projects/apotech/Apotech Short Teaser v2_p1_i0.jpeg",
-      "/projects/apotech/Project Core_Investors Teaser_04.2026_p1_i1.jpeg",
       "/projects/apotech/Project Core_Investors Teaser_04.2026_p24_i0.jpeg",
-      "/projects/apotech/Project Core_Investors Teaser_04.2026_p31_i1.jpeg",
+      "/projects/apotech/Project Core_Investors Teaser_04.2026_p24_i1.jpeg",
+      "/projects/apotech/Project Core_Investors Teaser_04.2026_p4_i6.jpeg",
+      "/projects/apotech/Project Core_Investors Teaser_04.2026_p4_i7.jpeg",
     ],
     description: "Scalable U.S. enterprise data center platform addressing the market gap where AI demand is growing and enterprise infrastructure is being left behind.",
     details: [
