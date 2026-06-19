@@ -15,13 +15,14 @@ const PROJECTS = [
     status: "Capital Raising",
     yield: "12-15% Target Net IRR",
     image: epcImage,
+    pdfUrl: "/docs/epc-presentation.pdf",
     sliderImages: [
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.07.45 p.m..png",
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.07.50 p.m..png",
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.08.15 p.m..png",
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.09.11 p.m..png",
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.09.16 p.m..png",
-      "/projects/epc_photos/Screenshot 2026-06-19 at 5.12.09 p.m..png",
+      "/projects/epc_photos/epc-1.png",
+      "/projects/epc_photos/epc-2.png",
+      "/projects/epc_photos/epc-5.png",
+      "/projects/epc_photos/epc-6.png",
+      "/projects/epc_photos/epc-7.png",
+      "/projects/epc_photos/epc-11.png",
     ],
     description: "Disciplined investment approach targeting existing income-producing value-add and core-plus multifamily properties with upside potential in high-growth U.S. markets.",
     details: [
@@ -39,6 +40,7 @@ const PROJECTS = [
     status: "Acquisition & Expansion",
     yield: "20-25% Target Gross IRR",
     image: "/projects/apotech/Apotech Short Teaser v2_p1_i0.jpeg",
+    pdfUrl: "/docs/apotech-teaser.pdf",
     sliderImages: [
       "/projects/apotech/Apotech Short Teaser v2_p1_i0.jpeg",
       "/projects/apotech/Project Core_Investors Teaser_04.2026_p1_i1.jpeg",
@@ -61,6 +63,7 @@ const PROJECTS = [
     status: "Completed",
     yield: "N/A",
     image: avonImage,
+    pdfUrl: "/docs/frontgate-brochure.pdf",
     sliderImages: [
       "/projects/frontgate/Broker_Deck_Unbranded_8.26.24_compressed_compressed_p1_i0.jpeg",
       "/projects/frontgate/Broker_Deck_Unbranded_8.26.24_compressed_compressed_p5_i0.jpeg",
@@ -202,8 +205,16 @@ export function ProjectGrid() {
                 {/* Animated Charts go here */}
                 <ProjectCharts projectId={activeProject.id} />
 
-                <div className="mt-16 flex justify-center border-t border-black/10 pt-12">
-                  <button 
+                <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-black/10 pt-12">
+                  <a
+                    href={activeProject.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-black rounded-full text-black px-12 py-5 text-xs tracking-[0.2em] uppercase font-bold hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    View Presentation
+                  </a>
+                  <button
                     onClick={() => {
                       setActiveProject(null);
                       const contactElement = document.getElementById("contact");
