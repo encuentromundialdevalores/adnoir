@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -20,6 +20,12 @@ export function ProjectSlider({ images }: { images: string[] }) {
     onSelect(emblaApi)
     emblaApi.on('reInit', onSelect).on('select', onSelect)
   }, [emblaApi, onSelect])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    const timer = setInterval(() => emblaApi.scrollNext(), 4000)
+    return () => clearInterval(timer)
+  }, [emblaApi])
 
   if (!images || images.length === 0) return null;
 

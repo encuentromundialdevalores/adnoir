@@ -15,4 +15,5 @@ pnpm-debug.log*
 contexto/
 epc_graphs/
 epc_photos/
-
+apotech_graphs/
+apotech_photos/
