@@ -78,6 +78,41 @@ app.post(`${ROUTE_PREFIX}/contact`, async (c) => {
 
     await kv.set(key, contactData);
 
+    // Send email using Resend
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+    if (resendApiKey) {
+      const resendResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${resendApiKey}`
+        },
+        body: JSON.stringify({
+          from: 'Ad Noir Contact Form <onboarding@resend.dev>', // Remember to change this to your verified domain on Resend
+          to: ['ir@adnoir.com'], // The email where you want to receive notifications
+          reply_to: email,
+          subject: `New Inquiry from ${name}: ${subject || 'No Subject'}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Company/Subject:</strong> ${subject}</p>
+            <hr />
+            <p><strong>Message:</strong></p>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+          `
+        })
+      });
+
+      if (!resendResponse.ok) {
+        console.error('Resend error:', await resendResponse.text());
+        // We log the error but still return success so the user sees the success message 
+        // since the message was saved in KV store.
+      }
+    } else {
+      console.warn('RESEND_API_KEY is not set. Email notification skipped.');
+    }
+
     return c.json({ success: true, id });
   } catch (err: any) {
     console.error('Contact submit exception:', err);
