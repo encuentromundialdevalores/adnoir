@@ -16,9 +16,12 @@ const PROJECTS = [
     yield: "12-15% Target Net IRR",
     image: epcImage,
     sliderImages: [
-      "/projects/epc/260610 EPC Multifamily Partners VI LLC - RS Presentation vP_p1_i0.jpeg",
-      "/projects/epc/260610 EPC Multifamily Partners VI LLC - Teaser_p1_i2.jpeg",
-      "/projects/epc/260610 EPC Multifamily Partners VI LLC - Teaser_p3_i1.jpeg",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.07.45 p.m..png",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.07.50 p.m..png",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.08.15 p.m..png",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.09.11 p.m..png",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.09.16 p.m..png",
+      "/projects/epc_photos/Screenshot 2026-06-19 at 5.12.09 p.m..png",
     ],
     description: "Disciplined investment approach targeting existing income-producing value-add and core-plus multifamily properties with upside potential in high-growth U.S. markets.",
     details: [
