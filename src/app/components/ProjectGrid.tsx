@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { X, MapPin } from "lucide-react";
 import { useState } from "react";
 import epcImage from "../../imports/image-3.png";
 import avonImage from "../../imports/image-5.png";
@@ -30,7 +30,9 @@ const PROJECTS = [
       "Target Net Equity Multiple: 1.7x - 2.0x",
       "Est. Avg. Annual Cash-on-Cash: 4% - 6%",
       "Target holding period: 5 years"
-    ]
+    ],
+    locationTags: ["Dallas–Fort Worth, TX", "Orlando, FL", "Tampa, FL", "Houston, TX"],
+    mapUrl: "https://maps.google.com/maps?q=Dallas+Fort+Worth+Texas&t=&z=5&ie=UTF8&iwloc=&output=embed",
   },
   {
     id: "apotech-01",
@@ -54,7 +56,9 @@ const PROJECTS = [
       "Target MOIC: 2.0x",
       "Hold Period: 5 Years",
       "Focus: AI & Hybrid Cloud inference"
-    ]
+    ],
+    locationTags: ["Chicago, IL", "Atlanta, GA", "Miami, FL", "Dallas, TX", "Phoenix, AZ"],
+    mapUrl: "https://maps.google.com/maps?q=Chicago+Illinois&t=&z=10&ie=UTF8&iwloc=&output=embed",
   },
   {
     id: "fontgate-01",
@@ -77,7 +81,9 @@ const PROJECTS = [
       "Mountain Modern Design",
       "The Springs Outdoor Oasis & Pioneer Plunge",
       "Opened Ski Season 2023-2024"
-    ]
+    ],
+    locationTags: ["Avon, CO — Adjacent to Beaver Creek Resort"],
+    mapUrl: "https://maps.google.com/maps?q=Avon+Colorado+Beaver+Creek+Resort&t=&z=13&ie=UTF8&iwloc=&output=embed",
   }
 ];
 
@@ -200,6 +206,32 @@ export function ProjectGrid() {
                   <div>
                     <h4 className="text-[10px] uppercase tracking-widest text-black/40 font-bold mb-4">Project Gallery</h4>
                     <ProjectSlider images={activeProject.sliderImages} />
+
+                    {/* Location */}
+                    <div className="mt-8">
+                      <h4 className="text-[10px] uppercase tracking-widest text-black/40 font-bold mb-3">Location</h4>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {activeProject.locationTags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="flex items-center gap-1.5 text-[11px] bg-black/[0.05] rounded-full px-3 py-1.5 font-medium text-black/60"
+                          >
+                            <MapPin size={9} strokeWidth={2.5} />
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="rounded-2xl overflow-hidden h-48 bg-black/5 ring-1 ring-black/10">
+                        <iframe
+                          title={`${activeProject.title} location map`}
+                          src={activeProject.mapUrl}
+                          className="w-full h-full border-0 grayscale"
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
