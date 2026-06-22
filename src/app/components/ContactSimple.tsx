@@ -62,7 +62,7 @@ export function ContactSimple() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest text-black/40 font-medium">Email</h4>
-                  <p className="text-sm font-medium">inquiries@adnoir.com</p>
+                  <p className="text-sm font-medium">ac@adnoir.com</p>
                 </div>
               </div>
               <div className="flex gap-6 items-center">
@@ -71,7 +71,7 @@ export function ContactSimple() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest text-black/40 font-medium">Office</h4>
-                  <p className="text-sm font-medium">+1 (305) 555-0123</p>
+                  <p className="text-sm font-medium">8114759202</p>
                 </div>
               </div>
               <div className="flex gap-6 items-center">
@@ -80,7 +80,7 @@ export function ContactSimple() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest text-black/40 font-medium">Headquarters</h4>
-                  <p className="text-sm font-medium">Miami Design District, FL</p>
+                  <p className="text-sm font-medium">Toronto, Canada</p>
                 </div>
               </div>
             </div>
