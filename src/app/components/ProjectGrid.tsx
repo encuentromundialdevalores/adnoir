@@ -239,14 +239,6 @@ export function ProjectGrid() {
                 <ProjectCharts projectId={activeProject.id} />
 
                 <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-black/10 pt-12">
-                  <a
-                    href={activeProject.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-black rounded-full text-black px-12 py-5 text-xs tracking-[0.2em] uppercase font-bold hover:bg-black hover:text-white transition-all duration-300"
-                  >
-                    View Presentation
-                  </a>
                   <button
                     onClick={() => {
                       setActiveProject(null);
